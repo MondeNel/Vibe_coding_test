@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>User Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>User Management</h1>
@@ -10,11 +11,11 @@
     <h2>Add User</h2>
     <form method="post">
         <input type="hidden" name="action" value="add">
-        <label>Name: <input type="text" name="name" required></label><br>
-        <label>Surname: <input type="text" name="surname" required></label><br>
-        <label>Email: <input type="email" name="email" required></label><br>
-        <label>Password: <input type="password" name="password" required></label><br>
-        <label>Confirm Password: <input type="password" name="confirm_password" required></label><br>
+        <label>Name: <input type="text" name="name" required placeholder="John"></label><br>
+        <label>Surname: <input type="text" name="surname" required placeholder="Doe"></label><br>
+        <label>Email: <input type="email" name="email" required placeholder="john.doe@example.com"></label><br>
+        <label>Password: <input type="password" name="password" required placeholder="12345"></label><br>
+        <label>Confirm Password: <input type="password" name="confirm_password" required placeholder="12345"></label><br>
         <button type="submit">Add User</button>
     </form>
     <h2>All Users</h2>
