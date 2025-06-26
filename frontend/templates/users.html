@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>User Management</h1>
+    {% if message %}<p style="color:green;">{{ message }}</p>{% endif %}
+    <h2>Add User</h2>
+    <form method="post">
+        <input type="hidden" name="action" value="add">
+        <label>Name: <input type="text" name="name" required placeholder="John"></label><br>
+        <label>Surname: <input type="text" name="surname" required placeholder="Doe"></label><br>
+        <label>Email: <input type="email" name="email" required placeholder="john.doe@example.com"></label><br>
+        <label>Password: <input type="password" name="password" required placeholder="12345"></label><br>
+        <label>Confirm Password: <input type="password" name="confirm_password" required placeholder="12345"></label><br>
+        <button type="submit">Add User</button>
+    </form>
+    <h2>All Users</h2>
+    <table border="1">
+        <tr><th>ID</th><th>Name</th><th>Surname</th><th>Email</th><th>Actions</th></tr>
+        {% for user in users %}
+        <tr>
+            <form method="post">
+                <td>{{ user.id }}<input type="hidden" name="user_id" value="{{ user.id }}"></td>
+                <td><input type="text" name="name" value="{{ user.name }}"></td>
+                <td><input type="text" name="surname" value="{{ user.surname }}"></td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <input type="hidden" name="action" value="update">
+                    <label>New Password: <input type="password" name="password"></label>
+                    <label>Confirm: <input type="password" name="confirm_password"></label>
+                    <button type="submit">Update</button>
+            </form>
+            <form method="post" style="display:inline;">
+                <input type="hidden" name="user_id" value="{{ user.id }}">
+                <input type="hidden" name="action" value="delete">
+                <button type="submit">Delete</button>
+            </form>
+                </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p><a href="{{ url_for('signup_page') }}">Back to Signup</a> | <a href="{{ url_for('login_page') }}">Back to Login</a></p>
+</body>
+</html> 
