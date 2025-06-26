@@ -1,3 +1,7 @@
+/* Add at the top of your HTML files in <head>:
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+*/
+
 body {
     background-color: #181a1b;
     color: #e0e0e0;
@@ -77,4 +81,113 @@ p {
 label {
     display: block;
     margin-bottom: 6px;
+}
+
+/* Responsive styles for mobile devices */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+        padding: 5px;
+    }
+    form {
+        max-width: 100%;
+        padding: 10px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        font-size: 1em;
+    }
+    button {
+        width: 100%;
+        margin: 8px 0;
+        font-size: 1em;
+        padding: 12px 0;
+    }
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+    table {
+        border: none;
+        box-shadow: none;
+    }
+    th, td {
+        border: none;
+        padding: 8px 4px;
+        text-align: left;
+    }
+    tr {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #444;
+    }
+    th {
+        background: none;
+        color: #ffb347;
+        font-weight: bold;
+    }
+    label {
+        font-size: 1em;
+    }
+    h1, h2 {
+        font-size: 1.3em;
+    }
+}
+
+/* Responsive styles for tablets */
+@media (min-width: 601px) and (max-width: 900px) {
+    body {
+        font-size: 17px;
+        padding: 10px;
+    }
+    form {
+        max-width: 600px;
+        padding: 18px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 98%;
+        font-size: 1.05em;
+    }
+    button {
+        width: auto;
+        font-size: 1.05em;
+        padding: 12px 20px;
+    }
+    table {
+        font-size: 1em;
+    }
+    h1, h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Responsive styles for large screens */
+@media (min-width: 901px) {
+    body {
+        font-size: 18px;
+        padding: 20px 0;
+    }
+    form {
+        max-width: 700px;
+        padding: 24px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 95%;
+        font-size: 1.1em;
+    }
+    button {
+        font-size: 1.1em;
+        padding: 14px 24px;
+    }
+    table {
+        font-size: 1.1em;
+    }
+    h1, h2 {
+        font-size: 2em;
+    }
 } 

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Management</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -43,6 +44,10 @@
         </tr>
         {% endfor %}
     </table>
-    <p><a href="{{ url_for('signup_page') }}">Back to Signup</a> | <a href="{{ url_for('login_page') }}">Back to Login</a></p>
+    <p>
+        <button type="button" onclick="window.location.href='{{ url_for('signup_page') }}'">Back to Signup</button>
+        
+        <button type="button" onclick="window.location.href='{{ url_for('login_page') }}'">Back to Login</button>
+    </p>
 </body>
 </html> 
