@@ -41,8 +41,8 @@ cd backend
 
 python -m venv venv
 
-source venv/bin/activate  
-# On Windows: venv\Scripts\activate
+
+# On Windows: source venv/bin/activate  
 
 pip install -r requirements.txt
 ```
